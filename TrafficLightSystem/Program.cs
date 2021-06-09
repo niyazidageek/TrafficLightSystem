@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace TrafficLightSystem
 {
@@ -12,7 +13,9 @@ namespace TrafficLightSystem
                 Console.WriteLine("1.Add street");
                 Console.WriteLine("2.Remove street");
                 Console.WriteLine("3.Start the traffic lights");
-                Console.WriteLine("4.Stop the traffic lights");
+                Console.WriteLine("4.Stop the traffic lights by street");
+                Console.WriteLine("5.Start the traffic lights by street");
+                Console.WriteLine("6.Stop the traffic lights");
                 Console.WriteLine("Enter a selection");
                 string selectionstr = Console.ReadLine();
                 while (!int.TryParse(selectionstr, out selection))
@@ -32,13 +35,19 @@ namespace TrafficLightSystem
                         MenuService.StartSystemMenu();
                         break;
                     case 4:
+                        MenuService.StopLightByStreetMenu();
+                        break;
+                    case 5:
+                        MenuService.StartLightByStreetMenu();
+                        break;
+                    case 6:
                         Console.WriteLine("Good bye!");
                         break;
                     default:
                         Console.WriteLine("There is no such option");
                         break;
                 }
-            } while (selection!=4);
+            } while (selection!=6);
         }
     }
 }

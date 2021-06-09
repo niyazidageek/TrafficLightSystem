@@ -55,8 +55,44 @@ namespace TrafficLightSystem
         }
         public static void StartSystemMenu()
         {
-            method.StartSystem();
+            try
+            {
+                method.Lights();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
             Console.WriteLine("Traffic lights have been started");
+        }
+        public static void StopLightByStreetMenu()
+        {
+            Console.WriteLine("Enter the name of the street");
+            string name = Console.ReadLine().ToLower();
+            try
+            {
+                method.StopLightByStreet(name);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Something went wrong!");
+                Console.WriteLine(e.Message);
+            }
+        }
+        public static void StartLightByStreetMenu()
+        {
+            Console.WriteLine("Enter the name of the street");
+            string name = Console.ReadLine().ToLower();
+            try
+            {
+                method.StartLightByStreet(name);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Something went wrong!");
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
