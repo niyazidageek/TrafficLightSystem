@@ -59,12 +59,12 @@ namespace TrafficLightSystem
             {
                 method.Lights();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("Traffic lights have stopped");
+                
             }
-            
-            Console.WriteLine("Traffic lights have been started");
+                       
         }
         public static void StopLightByStreetMenu()
         {

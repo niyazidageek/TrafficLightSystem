@@ -40,7 +40,7 @@ namespace TrafficLightSystem
             while(check!=1)
             {
                 if (check == 1)
-                    throw new Exception("System has stopped.");
+                    throw new KeyNotFoundException("System has stopped.");
                 Time = DateTime.Now;
                 FutureTime = Time.AddSeconds(10);               
                 foreach (var item in ParallelStreets)
@@ -65,7 +65,7 @@ namespace TrafficLightSystem
                 while (Time.Second != FutureTime.Second)
                 {
                     if (check == 1)
-                        throw new Exception("System has stopped.");
+                        throw new KeyNotFoundException("System has stopped.");
                     Time = DateTime.Now;                   
                 }
 
@@ -91,7 +91,7 @@ namespace TrafficLightSystem
                 while (Time.Second != FutureTime.Second)                  
                 {
                     if (check == 1)
-                        throw new Exception("System has stopped.");
+                        throw new KeyNotFoundException("System has stopped.");
                     Time = DateTime.Now;                
                 }        
                 Console.WriteLine("=============================");
@@ -174,8 +174,7 @@ namespace TrafficLightSystem
                     case 4:
                         MenuService.StartLightByStreetMenu();
                         break;
-                    case 5:
-                        Console.WriteLine("Good bye!");
+                    case 5:                        
                         check = 1;
                         break;
                     default:
